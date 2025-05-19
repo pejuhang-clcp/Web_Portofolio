@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pembayaran - Tech Center United</title>
+    <link rel="stylesheet" href="TCU-remake-style.css">
+    <link rel="icon" type="image/x-icon" href="logo tcu ig.png">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+    <div class="taskbar">
+        <nav>
+            <img src="Kelompok_8.png" alt="Logo Kelompok 8" class="logo">
+            <ul class="head">
+                <li><a href="TCU-remake-main-page.html" class="Isi">Beranda</a></li>
+                <li><a href="Tentang_kami_porto.html" class="Isi">Tentang kami</a></li>
+                <li><a href="Login.html" class="Isi">Log in</a></li>
+                <li><a href="cart.html" class="Isi"><i class="uil uil-shopping-cart-alt"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="payment-section">
+        <h2>Pembayaran</h2>
+        <div class="payment-container">
+            <div class="payment-details">
+                <h3>Detail Pesanan</h3>
+                <div id="order-items">
+                    <!-- Order items will be dynamically added here -->
+                </div>
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">Rp0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Biaya Pengiriman</span>
+                        <span id="shipping">Rp20.000</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Pembayaran</span>
+                        <span id="total">Rp0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <h3>Metode Pembayaran</h3>
+                <div class="payment-options">
+                    <div class="payment-option" onclick="selectPayment('bank')">
+                        <input type="radio" name="payment" id="bank" value="bank">
+                        <label for="bank">Transfer Bank</label>
+                        <div class="bank-details" id="bank-details">
+                            <p>Bank BCA</p>
+                            <p>No. Rekening: 1234567890</p>
+                            <p>a.n. Tech Center United</p>
+                        </div>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('ewallet')">
+                        <input type="radio" name="payment" id="ewallet" value="ewallet">
+                        <label for="ewallet">E-Wallet</label>
+                        <div class="ewallet-details" id="ewallet-details">
+                            <p>DANA</p>
+                            <p>No. Telepon: 081234567890</p>
+                            <p>a.n. Tech Center United</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="delivery-info">
+                    <h3>Informasi Pengiriman</h3>
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">No. Telepon</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Alamat Lengkap</label>
+                        <textarea id="address" required></textarea>
+                    </div>
+                </div>
+
+                <div id="payment-error" style="display: none; color: #D92C2C; margin: 10px 0; padding: 10px; background: rgba(217, 44, 44, 0.1); border-radius: 4px;"></div>
+
+                <button class="confirm-payment" onclick="confirmPayment()">Konfirmasi Pembayaran</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <footer>
+            <img src="www.Tech center united.com.png" alt="Tech center">
+        </footer>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html> 
